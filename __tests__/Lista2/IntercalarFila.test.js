@@ -15,7 +15,5 @@ test("Intercalando fila", () =>{
     f1.enqueue(7)
     f2.enqueue(2)
     f2.enqueue(4)
-    f2.enqueue(6)
-    f2.enqueue(8)
-    expect(i.intercalarFila(f1,f2)).toBe("[1, 2, 3, 4, 5, 6, 7, 8, ]");
+    expect(i.intercalarFila(f1,f2)).toBe("[1, 2, 3, 4, 5, 7, ]");
 })

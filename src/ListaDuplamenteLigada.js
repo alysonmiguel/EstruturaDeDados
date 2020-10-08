@@ -5,7 +5,6 @@
 
 
 class Node {
-
 	/**
 	 * Construtor do Nó que será usado para implementar uma Lista Duplamente Ligada
 	 * @param {any} [dado]  - Novo elemento que será inserido no Nó
@@ -73,12 +72,15 @@ class ListaDuplamenteLigada {
 	 * Remove o Nó que se encontra no começo da Lista.
 	 * 
 	 */
-	removeBeginning() {
+	removeFirst() {
 		if (!this.isEmpty()) {
-			//let tmp = this.head.proximo;
-
-			this.head = this.head.proximo;
-			this.head.anterior = null;
+			if (this.length() === 1) {
+				this.head = null;
+				this.tail = null;
+			} else {
+				this.head = this.head.proximo;
+				this.head.anterior = null;
+			}
 		}
 	}
 
@@ -95,9 +97,9 @@ class ListaDuplamenteLigada {
 			let aux;
 
 			if (current.dado === dado) {
-				return this.removeBeginning();
+				return this.removeFirst();
 			} else if (last.dado === dado) {
-				return this.removeEnd();
+				return this.removeLast();
 			} else {
 				while (next != null) {
 					if (next.dado === dado) {
@@ -120,11 +122,15 @@ class ListaDuplamenteLigada {
 	 * Remove o Nó que está no final da Lista
 	 * 
 	 */
-	removeEnd() {
+	removeLast() {
 		if (!this.isEmpty()) {
-			//let tmp = this.tail.anterior;
-			this.tail = this.tail.anterior;
-			this.tail.proximo = null;
+			if (this.length() === 1) {
+				this.head = null;
+				this.tail = null;
+			} else {
+				this.tail = this.tail.anterior;
+				this.tail.proximo = null;
+			}
 		}
 	}
 
@@ -156,7 +162,7 @@ class ListaDuplamenteLigada {
 	 * Retorna o tamanho da Lista
 	 * @returns {number} - Tamanho da Lista
 	 */
-	size() {
+	length() {
 		let cont = 0;
 		let tmp = this.head;
 
@@ -173,7 +179,7 @@ class ListaDuplamenteLigada {
 	 * @param {any} [dado] - Novo Nó a ser inserido na Lista 
 	 */
 	addAt(posicao, dado) {
-		if (posicao >= this.size()) {
+		if (posicao >= this.length()) {
 			//adicionando no final
 			this.append(dado);
 		} else {
@@ -236,6 +242,11 @@ class ListaDuplamenteLigada {
 			}
 			return false;
 		}
+	}
+
+	clear() {
+		this.head = null;
+		this.tail = null;
 	}
 }
 

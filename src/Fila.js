@@ -25,7 +25,7 @@ class Fila {
 	enqueue(newData) {
 		if (this.isFull()) {
 			throw new Error("Queue is full");
-		} else {
+		} else{
 			this.dados[this.fim++] = newData;
 		}
 	}

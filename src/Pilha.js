@@ -34,8 +34,7 @@ class Pilha {
 	push(newData) {
 		if (this.isFull()) {
 			throw new Error("Overflow");
-		}
-		else {
+		}else{
 			this.dados[++this.topo] = newData;
 		}
 	}
@@ -50,7 +49,8 @@ class Pilha {
 	pop() {
 		if (this.isEmpty()) {
 			throw new Error("Underflow");
-		} else {
+		}
+		else {
 			return this.dados[this.topo--];
 		}
 	}

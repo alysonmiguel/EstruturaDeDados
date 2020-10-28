@@ -90,6 +90,23 @@ class Lista {
 		return aux_b.dado;
 	}
 
+	removeDado(dado) {
+		if (this.isEmpty()) {
+			return false;
+		} else {
+			let anterior = this.head;
+			let atual = this.head.proximo;
+			while (atual !== null) {
+				if (atual.dado === dado) {
+					anterior.proximo = atual.proximo;
+					return true
+				}
+				anterior = atual;
+				atual = atual.proximo;
+			}
+			return false
+		}
+	}
 	/**
 	 * Retorna os dados do último nó da lista
 	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia

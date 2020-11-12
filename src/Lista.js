@@ -107,6 +107,7 @@ class Lista {
 			return false
 		}
 	}
+
 	/**
 	 * Retorna os dados do último nó da lista
 	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia

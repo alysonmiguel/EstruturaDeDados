@@ -4,7 +4,7 @@ let p1;
 let p2;
 
 beforeEach(() => {
-                   // base, expoente
+         // base, expoente
 	p1 = new Potenciacao(10, 5);
 	p2 = new Potenciacao(10, 3);
 });
@@ -18,3 +18,4 @@ test("Testes", () => {
 test("Multiplicar", () => {
 	expect(p1.multiplicar(p2).toString()).toBe("10, 8");
 });
+

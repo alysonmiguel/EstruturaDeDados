@@ -1,9 +1,9 @@
-import HashSondagemLinear from "../../src/TabelaHash/HashSondagemLinear";
+import HashComLista from "../../src/TabelaHash/HashComLista";
 
 let h;
 
 beforeEach(() => {
-	h = new HashSondagemLinear
+    h = new HashComLista
 });
 
 // test("Instaciação", () => {

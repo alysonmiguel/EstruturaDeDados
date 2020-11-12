@@ -7,12 +7,19 @@ beforeEach(() => {
 });
 
 test("Adicionar em lugares variados", () => {
-	l.add(1);
-	l.add(2);
-	l.add(3);
-	l.add(4);
+	l.append("a");
+	l.append("b");
+	l.append("c");
+	l.append("d");
 	expect(l.size()).toBe(4);
-	expect(l.toString()).toBe("4->3->2->1");
-	l.append(5);
-	expect(l.toString()).toBe("4->3->2->1->5");
+	expect(l.toString()).toBe("a->b->c->d->");
+	expect(l.removeFrist()).toBe("a");
+	expect(l.removeFrist()).toBe("b");
+	l.append("X");
+	l.append("F");
+	expect(l.removeFrist()).toBe("c");
+	expect(l.toString()).toBe("d->X->F->");
+	expect(l.size()).toBe(3);
+
+	
 });
